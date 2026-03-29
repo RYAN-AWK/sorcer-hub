@@ -46,7 +46,7 @@ local ITENS = {
 
 -- ============ BOSSES ============
 local BOSSES = {
-    {nome = "GOTAS", pos = CFrame.new(39.46, -77.25, 75.68)},
+    {nome = "Toji", displayNome = "GOTAS (Toji)", pos = CFrame.new(39.46, -77.25, 75.68)},
 }
 
 -- ============ ESTADO GLOBAL ============
@@ -490,7 +490,7 @@ local bossStatusLabel = blbl(bossStatusBox, "⏳ Aguardando início...", Color3.
 bsectionTitle("  🎯 BOSS ALVO", 3)
 local bossAlvoBox = bbox(4, 60)
 blbl(bossAlvoBox, "BOSS", Color3.fromRGB(200,80,80), 10, Enum.Font.GothamBold, 8, 6)
-local bossNomeLabel = blbl(bossAlvoBox, "GOTAS", Color3.fromRGB(255,120,120), 16, Enum.Font.GothamBold, 8, 20)
+local bossNomeLabel = blbl(bossAlvoBox, "GOTAS (Toji)", Color3.fromRGB(255,120,120), 16, Enum.Font.GothamBold, 8, 20)
 blbl(bossAlvoBox, "X: 39.46  Y: -77.25  Z: 75.68", Color3.fromRGB(180,140,140), 10, Enum.Font.Code, 8, 42)
 
 -- STATS
@@ -835,7 +835,7 @@ local function runBossFarm()
     bossStartTime = os.time()
 
     addBossLog("=== BOSS FARM INICIADO ===")
-    addBossLog("🎯 Alvo: " .. boss.nome)
+    addBossLog("🎯 Alvo: " .. (boss.displayNome or boss.nome))
 
     while bossRodando do
         -- Teleporta para o boss
